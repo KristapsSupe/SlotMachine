@@ -42,7 +42,7 @@ $symbols = [
 while (true) {
 
     $userInput = readline("Inserted deposit: " . $creditDeposit . PHP_EOL);
-    echo "// 1-3: add funds // 4: Bet 5x // 5: Bet 10x // 6: Cash In" . PHP_EOL;
+    echo "// 1-3: add funds // 4: Bet 5x // 5: Bet 10x // 6: Cash In // 7: Exit" . PHP_EOL;
 
     if ($userInput < 0) {
         echo "Invalid input" . PHP_EOL;
@@ -55,7 +55,7 @@ while (true) {
         $creditDeposit  += $card[$userInput];
         continue;
     }
-    if ($userInput > 6) {
+    if ($userInput > 7) {
         echo "Invalid input" . PHP_EOL;
         continue;
     }
@@ -103,6 +103,8 @@ while (true) {
             $creditDeposit -= $setBet;
             echo "SetBet is: " . $setBet. PHP_EOL;
             break;
+        case $userInput == 7:
+            exit;
     }
 
     for ($i = 1 ; $i <= $symbolsCount -1; $i++)
